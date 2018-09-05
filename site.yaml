@@ -1,0 +1,20 @@
+---
+
+- name: apply this to common config (all node)
+  hosts: all
+  remote_user: ansible
+  roles:
+    - common
+
+- name: for the webserver tier
+  hosts: webservers
+  remote_user: ansible
+  roles:
+    - web
+
+- name: for the MySQL Layer
+  hosts: dbservers
+  remote_user: ansible
+  roles:
+    - db 
+
